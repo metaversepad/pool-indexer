@@ -1,0 +1,22 @@
+type Factory @entity {
+  id: ID!
+  timestamp: BigInt!
+  poolAddress: Bytes! # address
+}
+
+type Pool @entity {
+  id: ID!
+}
+
+type User @entity {
+  id: ID!
+  totalFundAllPool: BigInt!
+  pool: [Pool!]!
+}
+
+type UserInPool @entity {
+  id: ID!
+  user: Bytes!
+  pool: Bytes!
+  value: BigInt!
+}
