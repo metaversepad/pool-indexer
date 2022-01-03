@@ -6,7 +6,7 @@ dataSources:
     name: PoolFactory
     network: bsc
     source:
-      address: "0x6360CCc578027DF64b9FcC90709D365E684dC676"
+      address: "0xe46FEfa26B08c7C98eb94D842B1B0b37F4C1029a"
       abi: PoolFactory
       startBlock: 13646770
     mapping:
