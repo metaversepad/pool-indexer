@@ -1,17 +1,10 @@
-type Factory @entity {
-  id: ID!
-  timestamp: BigInt!
-  poolAddress: Bytes! # address
-}
-
 type Pool @entity {
   id: ID!
-}
-
-type User @entity {
-  id: ID!
-  totalFundAllPool: BigInt!
-  pool: [Pool!]!
+  createdAt: BigInt!
+  startedAt: BigInt!
+  endedAt: BigInt!
+  participants: BigInt!
+  totalRaised: BigInt!
 }
 
 type UserInPool @entity {
@@ -20,3 +13,4 @@ type UserInPool @entity {
   pool: Bytes!
   value: BigInt!
 }
+

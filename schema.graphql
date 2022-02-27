@@ -1,17 +1,13 @@
-type Factory @entity {
-  id: ID!
-  timestamp: BigInt!
-  poolAddress: Bytes! # address
-}
-
 type Pool @entity {
   id: ID!
-}
-
-type User @entity {
-  id: ID!
-  totalFundAllPool: BigInt!
-  pool: [Pool!]!
+  factory: Factory!
+  maxCap: BigInt!
+  createdAt: BigInt!
+  startedAt: BigInt!
+  endedAt: BigInt!
+  tiers: BigInt!
+  participants: BigInt!
+  totalRaised: BigInt!
 }
 
 type UserInPool @entity {
@@ -19,4 +15,11 @@ type UserInPool @entity {
   user: Bytes!
   pool: Bytes!
   value: BigInt!
+}
+
+type Factory @entity {
+  id: ID!
+  totalProject: BigInt!
+  totalRaised: BigInt!
+  pool: [Pool!]! @derivedFrom(field: "factory")
 }
